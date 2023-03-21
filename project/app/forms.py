@@ -28,13 +28,12 @@ class studentForm31(forms.Form):
     name = forms.CharField(max_length=20)
     age = forms.IntegerField()
 
-class employeeForm31(forms.Form):
-    pass
+class em3(forms.Form):
     name = forms.CharField(max_length=20)
     email = forms.EmailField()
     gender = forms.CharField(max_length=15)
     contact = forms.IntegerField()
     password = forms.CharField(max_length=20)
-    widgets = {
-        'password': forms.PasswordInput(render_value=True),
-    }
+    # widgets = {
+    #     'password': forms.PasswordInput(render_value=True),
+    # }

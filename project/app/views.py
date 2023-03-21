@@ -251,7 +251,7 @@ def studentForm3(request):
 
 def employeeForm3(request):
     if request.method == "POST":
-        form = employeeForm31(request.POST)
+        form = em3(request.POST)
         if form.is_valid():
             n = form.cleaned_data["name"]
             e = form.cleaned_data["email"]
@@ -263,4 +263,4 @@ def employeeForm3(request):
             return HttpResponse("Hello " + n + ",<br>" + "&nbsp;&nbsp;&nbsp;Data Stored Successfully...")
         else:
             return HttpResponse("Error")
-    return render(request, "employeeForm3.html")
+    return render(request, "em3.html")
