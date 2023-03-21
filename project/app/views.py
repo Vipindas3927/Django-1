@@ -256,8 +256,8 @@ def employeeForm3(request):
             n = form.cleaned_data["name"]
             e = form.cleaned_data["email"]
             g = form.cleaned_data["gender"]
-            c = form.cleaned_data["phone"]
-            p = form.cleaned_data["pwd"]
+            c = form.cleaned_data["contact"]
+            p = form.cleaned_data["password"]
             data = employee2(name=n, email=e, gender=g, contact=c, password=p)
             data.save()
             return HttpResponse("Hello " + n + ",<br>" + "&nbsp;&nbsp;&nbsp;Data Stored Successfully...")
