@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Model Method 2</title>
+     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <style>
+        body{background:white;}
+        a{color:white;}
+    </style>
+</head>
+<body>
+<form method="post">
+  {% csrf_token %}
+  {{form.as_p}}
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

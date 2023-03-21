@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>Form 1</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/button.css' %}">
+<!--  <script type="text/javascript" src="{% static 'js/jquery-3.6.3.js' %}"></script>-->
+<!--  <script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>-->
+    <script>
+<!--$(document).ready(function(){-->
+<!--  $("#btn").click(function(){-->
+<!--    $("#A").removeClass("main");-->
+<!--    $("#A").addClass("main2");-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<!--  <script type="text/javascript">-->
+<!--    $(function(){-->
+<!--      $("#form1").validate({-->
+<!--        rules:{-->
+<!--          name:{required:true,-->
+<!--            minlength:2-->
+<!--          },-->
+<!--          email:{required:true,-->
+<!--            email:true-->
+<!--          },-->
+<!--          gender:{required:true,-->
+<!--          },-->
+<!--          phone:{required:true,-->
+<!--            minlength:10,-->
+<!--            maxlength:10-->
+<!--          },-->
+<!--          pwd:{required:true,-->
+<!--          },-->
+<!--          cpwd:{required:true,-->
+<!--            equalTo:"#password"-->
+<!--          },-->
+<!--        },-->
+<!--      });-->
+<!--    });-->
+<!--  </script>-->
+
+  <style>
+  body{background:black;
+        color:white;
+        }
+    .main{border: 2px solid red;
+        height:69%;
+        width:30%;
+        margin: 0;
+        position: absolute;
+        left: 30%;}
+    .main2{
+        border: 2px solid red;
+        height:82%;
+        width:30%;
+        margin: 0;
+        position: absolute;
+        left: 30%;
+        }
+    .center{
+        margin: 0;
+        position: absolute;
+        left: 10%;
+        }
+        .button, .button2{width:100px;
+        font-size:12px;}
+        h2{text-shadow: 0 0 2px white, 0 0 5px grey;
+        color:red;}
+  </style>
+</head>
+
+<body>
+<br><br><br>
+<div class="main container" id="A">
+<h2><u>Registration Form 1</u></h2><br>
+<form id="form1" method="POST"  class="form-group form-control-sm">
+  {% csrf_token %}
+  <table cellpadding="3" cellspacing="10">
+    <tr>
+      <th>Name: </th>
+      <td><input type="text" name="name" placeholder="Enter your name..." class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Email: </th>
+      <td><input type="email" name="email" placeholder="Enter your email id..."class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Gender: </th>
+      <td>
+       <input type="text" name="gender" placeholder="enter male/female..." class="form-control">
+      </td>
+    </tr>
+    <tr>
+      <th>Contact Number: </th>
+      <td><input type="number" name="phone" placeholder="Enter your contact number..." class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Password: </th>
+      <td><input type="password" name="pwd" id="password" placeholder="Enter your password..." class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Confirm Password: </th>
+      <td><input type="password" name="cpwd" placeholder="Re-enter your password..." class="form-control"></td>
+    </tr>
+    <tr>
+      <th colspan="2" >
+        <div class="center">
+          <br><br>
+        <button type="submit" name="button" id="btn" class="btn-primary button" >Submit</button>
+        &nbsp; &nbsp; &nbsp;
+        <button type="reset" name="reset" class="btn-danger button">Reset</button>
+        </div>
+      </th>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

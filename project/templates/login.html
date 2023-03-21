@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <style>
+        body{background:white;}
+        a{color:white;}
+    </style>
+</head>
+<body>
+<nav class="navbar-expand bg-primary">
+    <div class="nav navbar-nav">
+    <div class="btn-group">
+        <a href="{% url 'navigation' %}"><button type="button" class="btn btn-primary">Home</button></a>
+        <a href="{% url 'login' %}"><button type="button" class="btn btn-primary active">Login</button></a>
+        <a href="#"><button type="button" class="btn btn-primary">Contact</button></a>
+        <a href="#"><button type="button" class="btn btn-primary">About</button></a>
+    </div>
+    </div>
+</nav>
+
+<div class="container">
+  <h3>Login Page</h3>
+  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+</div>
+</body>
+</html>

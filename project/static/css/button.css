@@ -1,0 +1,102 @@
+/* Effect 1 */
+.button {
+  position: relative;
+  background-color: #04AA6D;
+  border: none;
+  font-size: 18px;
+  color: #FFFFFF;
+  padding: 2px;
+  width: 50px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+/* Effect 2 */
+.button2 {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 2px;
+  width: 50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button2 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 100%;
+  top: 24%;
+  right: 50px;
+  color:red;
+  transition: 0.5s;
+  font-size:75px;
+}
+
+.button2:hover span {
+  padding-right: 72px;
+}
+
+.button2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* Effect 3 */
+.button {
+  padding: 5px 10px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+    font-size:20px;
+    font-weight: bold;
+    }
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 2px #666;
+  transform: translateY(8px);

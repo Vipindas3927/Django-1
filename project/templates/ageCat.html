@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{all}}<br>
+{{ls}}<br>
+{{gt}}
+<br><br><br>
+<h3>Given Table</h3>
+<table border="1" cellpadding="10"cellspacing="0">
+    <tr>
+        <th>Sl No</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for i in all %}
+    <tr>
+        <td>{{i.index}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h3>Age less than 20</h3>
+<table border="1" cellpadding="10"cellspacing="0">
+    <tr>
+        <th>Sl No</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for i in ls %}
+    <tr>
+        <td>{{i.index}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h3>Age grater than or equal to 20</h3>
+<table border="1" cellpadding="10"cellspacing="0">
+    <tr>
+        <th>Sl No</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for i in gt %}
+    <tr>
+        <td>{{i.index}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

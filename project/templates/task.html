@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task</title>
+    <style>
+        table,th,td{
+        border: 1px dashed red;
+        border-radius: 7px;
+        background:black;
+        color:white;
+        text-align:center;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h3>DataBase</h3><br>
+<table border="1" cellspacing="0" cellpadding="9">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for i in all %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<br><br><br>
+<h3>Name Starts with 'A'</h3><br>
+<table border="1" cellspacing="0" cellpadding="9">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+    </tr>
+    {% for i in li %}
+    <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.age}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+</html>

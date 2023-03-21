@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+    <meta charset="UTF-8">
+    <title>Form 1</title>
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'css/button.css' %}">
+  <script type="text/javascript" src="{% static 'js/jquery-3.6.3.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script>
+$(document).ready(function(){
+  $("#btn").click(function(){
+    $("#A").removeClass("main");
+    $("#A").addClass("main2");
+  });
+});
+</script>
+
+  <script type="text/javascript">
+    $(function(){
+      $("#form1").validate({
+        rules:{
+
+          email:{required:true,
+            email:true,
+          },
+          pwd:{required:true,
+          },
+        },
+      });
+    });
+
+  </script>
+
+<!--  <script>-->
+<!--  function check()-->
+<!--  {alert("Wrong user name or password...");-->
+<!--    var userName = document.getElementByName("email");-->
+<!--    var password = document.getElementByName("psw");-->
+<!--    var email;-->
+<!--    var psw;-->
+<!--    var i;-->
+<!--    for(i=0;i<{{all}}.length;j++){-->
+<!--      email = {{all.i.email}};-->
+<!--      psw = {{all.i.password}};-->
+<!--      if(userName != email && password != psw)-->
+<!--      {-->
+<!--        alert("Wrong user name or password");-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
+<!--  </script>-->
+
+  <style>
+  body{background:black;
+        color:white;
+        }
+    .main{border: 2px solid red;
+        height:49%;
+        width:30%;
+        margin: 0;
+        position: absolute;
+        left: 30%;}
+    .main2{
+        border: 2px solid red;
+        height:49%;
+        width:30%;
+        margin: 0;
+        position: absolute;
+        left: 30%;
+        }
+    .center{
+        margin: 0;
+        position: absolute;
+        left: 10%;
+        }
+        .button, .button2{width:100px;
+        font-size:12px;}
+        h1{text-shadow: 0 0 2px white, 0 0 5px grey;
+        color:red;}
+  </style>
+</head>
+
+<body>
+<br><br><br>
+<div class="main container" id="A">
+  <h1><u><center>Login</center></u></h1><br>
+<form id="form1" method="POST" action="../loginPage" class="form-group form-control-sm">
+  {% csrf_token %}
+  <table cellpadding="3" cellspacing="10">
+    <tr>
+      <th>Email: </th>
+      <td><input type="text" name="email" placeholder="Enter your email id..."class="form-control"></td>
+    </tr>
+      <th>Password: </th>
+      <td><input type="password" name="pwd" id="password" placeholder="Enter your password..." class="form-control"></td>
+    </tr>
+    <tr>
+      <th colspan="2" >
+        <div class="center">
+          <br><br>
+        <button type="submit" name="button" id="btn" class="btn-primary button" onclick="check()">Submit</button>
+        &nbsp; &nbsp; &nbsp;
+        <button type="reset" name="reset" class="btn-danger button">Reset</button>
+        </div>
+      </th>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>

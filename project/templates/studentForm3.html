@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration 3</title>
+</head>
+<body>
+<form method="POST">
+  {% csrf_token %}
+  Enter your Name: <input type="text" name="name"><br>
+  Enter Your Age: <input type="number" name="age"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
