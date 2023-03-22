@@ -283,3 +283,19 @@ def employeeLoginForm3(request):
         else:
             return HttpResponse("Error")
     return render(request, "employeeLogin3.html")
+
+
+#file uploading
+def fileUploading(request):
+    if request.method == 'POST':
+        form = fileUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            n = form.cleaned_data['name']
+            f = form.cleaned_data['file']
+            data = fileUpload(name=n, file=f)
+            data.save()
+            return HttpResponse("File uploaded successfully...")
+        else:
+            return HttpResponse("Error")
+    return render(request, "fileUploadingForm.html")
+

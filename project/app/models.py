@@ -23,5 +23,7 @@ class employee2(models.Model):
     contact = models.IntegerField()
     password = models.CharField(max_length=20)
 
-
+class fileUpload(models.Model):
+    name = models.CharField(max_length=20)
+    file = models.FileField()
 

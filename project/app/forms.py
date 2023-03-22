@@ -38,3 +38,7 @@ class em3(forms.Form):
 class emLogin3(forms.Form):
     email = forms.EmailField()
     password = forms.CharField(max_length=20)
+
+class fileUploadForm(forms.Form):
+    name = forms.CharField(max_length=20)
+    file = forms.FileField()

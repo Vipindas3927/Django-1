@@ -7,3 +7,5 @@ from .models import *
 admin.site.register(student)
 admin.site.register(employee)
 admin.site.register(employee2)
+admin.site.register(fileUpload)
+
