@@ -51,4 +51,5 @@ urlpatterns = [
     path('employeeForm3', views.employeeForm3, name='employeeForm3'),
     path('employeeLoginForm3', views.employeeLoginForm3, name='employeeLoginForm3'),
     path('fileUploading', views.fileUploading, name='fileUploading'),
+    path('fileDisplay', views.fileDisplay, name='fileDisplay'),
 ]

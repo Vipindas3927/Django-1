@@ -299,3 +299,6 @@ def fileUploading(request):
             return HttpResponse("Error")
     return render(request, "fileUploadingForm.html")
 
+def fileDisplay(request):
+    images = fileUpload.objects.all()
+    return render(request, "fileDisplay.html", {'i': images})
