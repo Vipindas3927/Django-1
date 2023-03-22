@@ -258,9 +258,28 @@ def employeeForm3(request):
             g = form.cleaned_data["gender"]
             c = form.cleaned_data["contact"]
             p = form.cleaned_data["password"]
-            data = employee2(name=n, email=e, gender=g, contact=c, password=p)
+            data = employee(name=n, email=e, gender=g, contact=c, password=p)
             data.save()
             return HttpResponse("Hello " + n + ",<br>" + "&nbsp;&nbsp;&nbsp;Data Stored Successfully...")
         else:
             return HttpResponse("Error")
-    return render(request, "em3.html")
+    return render(request, "employeeForm3.html")
+
+def employeeLoginForm3(request):
+    if request.method == "POST":
+        form = emLogin3(request.POST)
+        if form.is_valid():
+            e = form.cleaned_data["email"]
+            p = form.cleaned_data["password"]
+            ListAll = employee.objects.all()
+            key = 0
+            for i in ListAll:
+                if i.email == e and i.password == p:
+                    key = 1
+                    return HttpResponse("Hello " + i.name + ",<br>" + "&nbsp;&nbsp;&nbsp; Successfully Login...")
+                    break
+            if key == 0:
+                return HttpResponse("Wrong username/password...<br><br><a href='employeeForm3'>click here to register</a>")
+        else:
+            return HttpResponse("Error")
+    return render(request, "employeeLogin3.html")

@@ -34,6 +34,7 @@ class em3(forms.Form):
     gender = forms.CharField(max_length=15)
     contact = forms.IntegerField()
     password = forms.CharField(max_length=20)
-    # widgets = {
-    #     'password': forms.PasswordInput(render_value=True),
-    # }
+
+class emLogin3(forms.Form):
+    email = forms.EmailField()
+    password = forms.CharField(max_length=20)

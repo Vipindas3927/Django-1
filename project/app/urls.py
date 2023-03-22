@@ -49,4 +49,5 @@ urlpatterns = [
     path('employeeLogin2', views.employeeLogin2, name='employeeLogin2'),
     path('studentForm3', views.studentForm3, name='studentForm3'),
     path('employeeForm3', views.employeeForm3, name='employeeForm3'),
+    path('employeeLoginForm3', views.employeeLoginForm3, name='employeeLoginForm3'),
 ]
