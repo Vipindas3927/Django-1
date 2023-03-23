@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Food</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  Enter Item Name: <input type="text" name="iname"><br><br>
+  Enter Item Price: <input type="number" name="iprice"><br><br>
+  Upload Image: <input type="file" name="file"><br><br><br>
+  <button type="submit">Submit</button>
+</form>
+</body>
+</html>

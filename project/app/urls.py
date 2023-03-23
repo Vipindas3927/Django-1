@@ -52,4 +52,11 @@ urlpatterns = [
     path('employeeLoginForm3', views.employeeLoginForm3, name='employeeLoginForm3'),
     path('fileUploading', views.fileUploading, name='fileUploading'),
     path('fileDisplay', views.fileDisplay, name='fileDisplay'),
+
+    #food
+
+    path('item_upload/', views.itemUpload, name="foodUpload"),
+    path('item_display/', views.itemDisplay, name="itemDisplay"),
+    path('item_order/', views.itemOrder, name="itemOrder"),
+    path('item_Bill/', views.itemBill, name="itemBill"),
 ]

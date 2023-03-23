@@ -302,3 +302,48 @@ def fileUploading(request):
 def fileDisplay(request):
     images = fileUpload.objects.all()
     return render(request, "fileDisplay.html", {'i': images})
+
+#food
+
+def itemUpload(request):
+    if request.method == 'POST':
+        form = uploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            a = form.cleaned_data['iname']
+            b = form.cleaned_data['iprice']
+            c = form.cleaned_data['file']
+            data = uploadModel(iname=a, iprice=b, file=c)
+            data.save()
+            return HttpResponse("<h3>Successfully Uploaded...</h3>")
+        else:
+            return HttpResponse("<h3>Submission Failed...</h3>")
+    else:
+        return render(request, "Fupload.html")
+def itemDisplay(request):
+    all = uploadModel.objects.all()
+    name, price, files = [], [], []
+    for i in all:
+        #path = i.file.url
+        name.append(i.iname)
+        price.append(i.iprice)
+        files.append(i.file)
+    return render(request, "Fitemdisplay.html", {'iname': name, 'iprice': price, 'file': files})
+def itemOrder(request):
+    all = uploadModel.objects.all()
+    return render(request, "Fitemorder.html", {'data': all})
+def itemBill(request):
+    a = None
+    t = 0
+    if request.method == 'POST':
+        a = request.POST.get('iname')
+        b = request.POST.get('iprice')
+        c = request.POST.get('qty')
+        if c == '':
+            return HttpResponse("Item Quantity Must have some value")
+        t = int(b) * int(c)
+        data = itemBillModel(iname=a, iprice=b, qty=c, total=t)
+        data.save()
+    else:
+        return HttpResponse("Error")
+    return render(request, "Fitembill.html", {'iname': a, 'total': t})
+

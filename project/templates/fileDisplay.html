@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>DisplayFile</title>
+    <style>
+    img{
+    max-width: 150px;
+    height: auto;
+    }
+    </style>
 </head>
 <body>
 Object:<br>
@@ -10,9 +16,9 @@ Object:<br>
 <br><br><br>
 Images:<br>
 {% for f in i %}
-{{ f.name }}<br>
-{{ f.file }}<br>
-<img src="{{ f.file.url }}"/><br><br>
+<h3>{{ f.name }}</h3>
+<h6>{{ f.file }}</h6>
+<img src="{{ f.file.url }}"/><br><br><hr>
 {% endfor %}
 </body>
 </html>

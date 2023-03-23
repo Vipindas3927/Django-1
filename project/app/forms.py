@@ -42,3 +42,14 @@ class emLogin3(forms.Form):
 class fileUploadForm(forms.Form):
     name = forms.CharField(max_length=20)
     file = forms.FileField()
+
+
+#food
+class uploadForm(forms.Form):
+    iname = forms.CharField(max_length=20)
+    iprice = forms.IntegerField()
+    file = forms.FileField()
+class itemBillForm(forms.Form):
+    iname = forms.CharField(max_length=20)
+    iprice = forms.IntegerField()
+    qty = forms.IntegerField()

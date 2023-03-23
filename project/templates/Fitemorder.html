@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Order</title>
+</head>
+<body>
+<form method="post" action="../item_Bill/">
+{% csrf_token %}
+    {% for i in data %}
+    Item Name: <input type="text" value="{{i.iname}}" name="iname" ><br><br>
+    Item Prize: <input type="number" value="{{i.iprice}}" name="iprice" ><br><br>
+    Item Quantity: <input type="number" min="1" max="99" name="qty"><br><br><br>
+
+    <button type="submit">Submit</button>
+    {% endfor %}
+</form>
+</body>
+</html>

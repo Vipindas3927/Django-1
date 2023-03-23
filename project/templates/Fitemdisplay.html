@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Items</title>
+</head>
+<body>
+<table>
+  <tr>
+      {% for name in iname %}
+    <td><a href="../item_Order/{{name}}">{{name}}</a></td>
+      {% endfor %}
+  </tr>
+  <tr>
+      {% for i in iprice %}
+      <td>{{i}}</td>
+      {% endfor %}
+  </tr>
+</table>
+</body>
+</html>
