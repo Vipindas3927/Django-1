@@ -3,19 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Food Items</title>
+    <style>
+        img{
+    width:300px;
+    height:200px;
+    }
+        a{
+            color: red;
+        }
+    </style>
 </head>
 <body>
-<table>
+<table cellpadding="5" cellspacing="5">
   <tr>
       {% for name in iname %}
-    <td><a href="../item_Order/{{name}}">{{name}}</a></td>
+      <th><h2><a href="../item_Order/{{name}}">{{name}}</a></h2></th>
       {% endfor %}
   </tr>
+    <tr>
+        {% for f in file %}
+        <td>
+            <a href="..{{f.url}}"><img src="{{f.url}}" alt="Pic"></a>
+        </td>
+        {% endfor %}
+    </tr>
   <tr>
       {% for i in iprice %}
-      <td>{{i}}</td>
-      {% endfor %}
+      <th><h5>Rs. {{i}}</h5></th>
+    {% endfor %}
   </tr>
+
 </table>
 </body>
 </html>
