@@ -57,6 +57,6 @@ urlpatterns = [
 
     path('item_upload/', views.itemUpload, name="foodUpload"),
     path('item_display/', views.itemDisplay, name="itemDisplay"),
-    path('item_order/', views.itemOrder, name="itemOrder"),
+    path('item_order/<name>', views.itemOrder, name="itemOrder"),
     path('item_Bill/', views.itemBill, name="itemBill"),
 ]

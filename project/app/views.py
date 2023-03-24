@@ -328,8 +328,8 @@ def itemDisplay(request):
         price.append(i.iprice)
         files.append(i.file)
     return render(request, "Fitemdisplay.html", {'iname': name, 'iprice': price, 'file': files})
-def itemOrder(request):
-    all = uploadModel.objects.all()
+def itemOrder(request, name):
+    all = uploadModel.objects.filter(iname=name)
     return render(request, "Fitemorder.html", {'data': all})
 def itemBill(request):
     a = None
