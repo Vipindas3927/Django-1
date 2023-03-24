@@ -345,5 +345,5 @@ def itemBill(request):
         data.save()
     else:
         return HttpResponse("Error")
-    return render(request, "Fitembill.html", {'iname': a, 'total': t})
+    return render(request, "Fitembill.html", {'iname': a, 'total': t, 'qty':c})
 

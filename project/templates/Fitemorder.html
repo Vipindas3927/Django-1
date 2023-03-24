@@ -5,15 +5,17 @@
     <title>Food Order</title>
 </head>
 <body>
-<form method="post" action="../item_Bill/">
-{% csrf_token %}
-    {% for i in data %}
-    Item Name: <input type="text" value="{{i.iname}}" name="iname" ><br><br>
-    Item Prize: <input type="number" value="{{i.iprice}}" name="iprice" ><br><br>
-    Item Quantity: <input type="number" min="1" max="99" name="qty"><br><br><br>
 
+    {% for i in data %}
+    <form method="post" action="../item_Bill/">
+    {% csrf_token %}
+    Item Name: <input  type="text" value="{{i.iname}}" name="iname" ><br><br>
+    Item Prize: <input  type="number" value="{{i.iprice}}" name="iprice" ><br><br>
+    Item Quantity: <input type="number" min="0" max="99" name="qty" value="0"><br><br><br>
     <button type="submit">Submit</button>
+    </form>
+    <br><hr><br>
     {% endfor %}
-</form>
+
 </body>
 </html>
