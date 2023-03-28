@@ -37,3 +37,7 @@ class itemBillModel(models.Model):
     iprice = models.IntegerField()
     qty = models.IntegerField()
     total = models.IntegerField(null=True)
+
+#login
+
+
