@@ -15,11 +15,11 @@
   <h2>Welcome <span style="...">{{current_user}}</span>!</h2>
 {% else %}
   <a href="{% url 'signin' %}">Sign In</a>
+  <span>/</span>
   <a href="{% url 'signup' %}">Sign Up</a>
   <hr>
   <h2>Login required to access this website!</h2>
 {% endif %}
-
-{% block body %}Base Body{% endblock %}
+{% block body %}{% endblock %}
 </body>
 </html>

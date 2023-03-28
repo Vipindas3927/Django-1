@@ -323,17 +323,15 @@ def itemDisplay(request):
     all = uploadModel.objects.all()
     name, price, files = [], [], []
     for i in all:
-        #path = i.file.url
+        path = i.file.url
         name.append(i.iname)
         price.append(i.iprice)
-        files.append(i.file)
+        files.append(path)
     return render(request, "Fitemdisplay.html", {'iname': name, 'iprice': price, 'file': files})
 def itemOrder(request, name):
     all = uploadModel.objects.filter(iname=name)
     return render(request, "Fitemorder.html", {'data': all})
 def itemBill(request):
-    a = None
-    t = 0
     if request.method == 'POST':
         a = request.POST.get('iname')
         b = request.POST.get('iprice')
@@ -354,8 +352,7 @@ def home(request):
         param = {'current_user':current_user}
         return render(request, 'user_base_page.html', param)
     else:
-        pass
-        #return redirect('home')
+        return redirect('signup')
     return render(request, 'user_login_page.html')
 
 def signup(request):
