@@ -347,3 +347,7 @@ def itemBill(request):
         return HttpResponse("Error")
     return render(request, "Fitembill.html", {'iname': a, 'total': t, 'qty':c})
 
+#login
+# def home(request):
+#     if 'user' in request.session:
+#         current_user

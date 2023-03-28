@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Base{% endblock %}</title>
+</head>
+<body>
+<h1>MY SITE</h1>
+<a href="/">Home</a>
+<span>/</span>
+
+{% if current_user %}
+  <a href="{% url 'signout' %}">Sign Out</a>
+  <hr>
+  <h2>Welcome <span style="...">{{current_user}}</span>!</h2>
+{% else %}
+  <a href="{% url 'signin' %}">Sign In</a>
+  <a href="{% url 'signup' %}">Sign Up</a>
+  <hr>
+  <h2>Login required to access this website!</h2>
+{% endif %}
+
+{% block body %}Base Body{% endblock %}
+</body>
+</html>
