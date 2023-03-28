@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
@@ -348,6 +348,45 @@ def itemBill(request):
     return render(request, "Fitembill.html", {'iname': a, 'total': t, 'qty':c})
 
 #login
-# def home(request):
-#     if 'user' in request.session:
-#         current_user
+def home(request):
+    if 'user' in request.session:
+        current_user = request.session['user']
+        param = {'current_user':current_user}
+        return render(request, 'user_base_page.html', param)
+    else:
+        pass
+        #return redirect('home')
+    return render(request, 'user_login_page.html')
+
+def signup(request):
+    if request.method == 'POST':
+        uname = request.POST.get('uname')
+        pwd = request.POST.get('psw')
+        if User.objects.filter(username=uname).count() > 0:
+            return HttpResponse('User name already exist.')
+        else:
+            user = User(username=uname, password=pwd)
+            user.save()
+            return redirect('home')
+    else:
+        return render(request, 'user_signup_page.html')
+
+def signin(request):
+    if request.method == 'POST':
+        uname = request.POST.get('uname')
+        pwd = request.POST.get('psw')
+        check_user = User.objects.filter(username=uname, password=pwd)
+        if check_user:
+            request.session['user'] = uname
+            return redirect('home')
+        else:
+            return HttpResponse("Please enter valid user name and password.")
+    return render(request, 'user_login_page.html')
+
+def signout(request):
+    try:
+        del request.session['user']
+    except:
+        return redirect('signin')
+    return redirect('signin')
+
