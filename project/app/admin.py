@@ -11,4 +11,7 @@ admin.site.register(fileUpload)
 admin.site.register(uploadModel)
 admin.site.register(itemBillModel)
 admin.site.register(User)
+admin.site.register(User_Register)
+admin.site.register(Test_Register)
+admin.site.register(Test_Book)
 

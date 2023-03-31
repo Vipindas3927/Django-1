@@ -352,7 +352,7 @@ def home(request):
         param = {'current_user':current_user}
         return render(request, 'user_base_page.html', param)
     else:
-        return redirect('signup')
+        return redirect('signin')
     return render(request, 'user_login_page.html')
 
 def signup(request):
@@ -387,3 +387,49 @@ def signout(request):
         return redirect('signin')
     return redirect('signin')
 
+#forign key
+
+def userregister(request):
+    return render(request, 'register.html')
+def ureg(request):
+    try:
+        uid = request.POST['uid']
+        name = request.POST['name']
+        address = request.POST['address']
+        un = request.POST['un']
+        psd = request.POST['psd']
+        date = User_Register(uid=uid, name=name, address=address, username=un, password=psd)
+        date.save()
+        return HttpResponse("Hi "+name+",<br>Successfully registered...")
+    except:
+        return HttpResponse("somthing went wrong...")
+def testregister(request):
+    return render(request, 'testreg.html')
+def treg(request):
+    try:
+        tid = request.POST['tname']
+        tname = request.POST['tname']
+        tdes = request.POST['tdes']
+        price = request.POST['price']
+
+        data = Test_Register(tid=tid, tname=tname, tdescription=tdes, price=price)
+        data.save()
+        return HttpResponse("Hi ,<br>Successfully registered...")
+    except:
+        return HttpResponse("Somthing went wrong...")
+
+def book(request):
+    return render(request, 'book.html')
+def booking(request):
+    try:
+        uid = request.POST['uid']
+        tname = request.POST['tname']
+        dt = request.POST['dt']
+        data = Test_Book(uid=User_Register.objects.get(uid=uid), tname=Test_Register.objects.get(tname=tname),dt=dt)
+        data.save()
+        return HttpResponse("Hi,<br>Successfully registered...")
+    except:
+        return HttpResponse("somthing went wrong...")
+def bookdetails(request):
+    a = Test_Book.objects.all()
+    return render(request, 'bookingdetails.html', {'data': a})

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form style="text-align: center;" action="../treg" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label type="tid" id="tid">ID: </label>
+            </td>
+            <td>
+                <input type="text" id="tid" name="tid">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tname">Name: </label>
+            </td>
+            <td>
+                <input type="text" name="tname" id="tname">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="tdes">Description: </label>
+            </td>
+            <td>
+                <input type="text" name="tdes" id="tdes">
+            </td>
+        </tr>
+
+         <tr>
+            <td>
+                <label for="price">Price: </label>
+            </td>
+            <td>
+                <input type="number" name="price" id="price">
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

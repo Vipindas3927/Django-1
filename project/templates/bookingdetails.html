@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Booking Details</title>
+</head>
+<body>
+<table border="1">
+  <tr>
+    <th>User ID</th>
+    <th>User Nmame</th>
+    <th>Test ID</th>
+    <th>Test Name</th>
+    <th>Price</th>
+    <th>Date</th>
+  </tr>
+  {% for i in data %}
+  <tr>
+    <td>{{i.uid.uid}}</td>
+    <td>{{i.uid.name}}</td>
+    <td>{{i.tname.tid}}</td>
+    <td>{{i.tname.tname}}</td>
+    <td>{{i.tname.price}}</td>
+    <td>{{i.dt}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</body>
+</html>

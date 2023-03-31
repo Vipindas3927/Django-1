@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form style="text-align: center;" action="../ureg" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>
+                <label type="uid" id="uid">ID: </label>
+            </td>
+            <td>
+                <input type="text" id="uid" name="uid">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="name">Name: </label>
+            </td>
+            <td>
+                <input type="text" name="name" id="name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="address">Address: </label>
+            </td>
+            <td>
+                <input type="text" name="address" id="address">
+            </td>
+        </tr>
+
+         <tr>
+            <td>
+                <label for="un">User Name: </label>
+            </td>
+            <td>
+                <input type="text" name="un" id="un">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="psd">Password: </label>
+            </td>
+            <td>
+                <input type="text" name="psd" id="psd">
+            </td>
+        </tr>
+    </table>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>

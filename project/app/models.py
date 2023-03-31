@@ -45,5 +45,23 @@ class User(models.Model):
     def __str__(self):
         return self.username
 
+#forign key
 
+class User_Register(models.Model):
+    uid = models.IntegerField(primary_key=True)
+    name = models.CharField(max_length=30)
+    address = models.CharField(max_length=100)
+    username = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+
+class Test_Register(models.Model):
+    tid = models.IntegerField(primary_key=True)
+    tname = models.CharField(max_length=20)
+    tdescription = models.CharField(max_length=100)
+    price = models.IntegerField()
+
+class Test_Book(models.Model):
+    uid = models.ForeignKey(User_Register, on_delete=models.CASCADE)
+    tname = models.ForeignKey(Test_Register, on_delete=models.CASCADE)
+    dt = models.DateTimeField()
 

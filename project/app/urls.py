@@ -66,4 +66,14 @@ urlpatterns = [
     path('signin/', views.signin, name="signin"),
     path('signout/', views.signout, name="signout"),
     path('signup/', views.signup, name="signup"),
+
+    #forign key
+    path('userregister', views.userregister, name='userregister'),
+    path('ureg', views.ureg, name='ureg'),
+    path('testregister', views.testregister, name='testregister'),
+    path('treg', views.treg, name='treg'),
+    path('book', views.book, name='book'),
+    path('booking', views.booking, name='booking'),
+    path('bookdetails', views.bookdetails, name='bookdetails'),
+
 ]
