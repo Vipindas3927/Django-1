@@ -1,0 +1,18 @@
+{% extends 'app3Temp/base.html' %}
+
+{% block title %}Teacher Signup{% endblock %}
+
+{% block body %}
+<div class="container">
+  <h2>Teacher - Signup</h2>
+  <form method="post" class="form-group">
+    {% csrf_token %}
+    <table class="table table-bordered table-primary">
+      {{form1.as_table}}
+      {{form2.as_table}}
+    </table>
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button class="btn btn-danger" type="reset">Reset</button>
+  </form>
+</div>
+{% endblock %}

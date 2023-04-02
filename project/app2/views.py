@@ -10,7 +10,7 @@ def user_display(request):
     userdata =user_data_model.objects.all()
     return render(request, "app2Temp/display.html", {'userdata': userdata})
 # Insert/Create
-def inser_user(request):
+def insert_user(request):
     form = user_data_form()
     if request.method == 'POST':
         form = user_data_form(request.POST)

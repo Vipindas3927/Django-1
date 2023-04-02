@@ -20,6 +20,6 @@ urlpatterns = [
     path('', views.user_display, name='user_display'),
     path('delete_user/<id>', views.delete_user, name='delete_user'),
     path('update_user/<id>', views.update_user, name='update_user'),
-    path('insert_user/', views.inser_user, name='insert_user'),
+    path('insert_user/', views.insert_user, name='insert_user'),
 
 ]

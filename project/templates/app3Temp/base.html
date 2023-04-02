@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Base{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.3.js' %}"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand bg-light">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'home' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li class="dropdown"><a class="" data-toggle="dropdown" href="#">Sign Up
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="{% url 'student_signup' %}">Student</a></li>
+                    <li class="dropdown-item"><a href="{% url 'teacher_signup' %}">Teacher</a></li>
+                </ul>&nbsp;&nbsp;&nbsp;&nbsp;
+            </li>
+            <li><a href="{% url 'login' %}">Login</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><a href="{% url 'logout' %}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        </ul>
+    </div>
+</nav>
+{% block body %} {% endblock %}
+</body>
+</html>

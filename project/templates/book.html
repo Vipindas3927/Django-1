@@ -8,10 +8,10 @@
 <form style="text-align:center;" action="/booking" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <label for="uid">User ID: </label>
-    <input type="number" id="uid" name="uid"><br><br>
+    <input type="text" id="uid" name="uid"><br><br>
 
     <label for="tname">Test Name: </label>
-    <input type="number" id="tname" name="tname"><br><br>
+    <input type="text" id="tname" name="tname"><br><br>
 
     <label for="dt">Date and Time: </label>
     <input type="datetime-local" id="dt" name="dt"><br><br>

@@ -28,7 +28,7 @@ SECRET_KEY = '!^jp3wb7*a#ggs+p55)t)g%o!sruvac3r#c5qh1t6690w6ah-l'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_URL = 'app3/login' # app3
 
 # Application definition
 
@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app', 'app2'
+    'app',
+    'app2',
+    'app3'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+AUTH_USER_MODEL = 'app3.CustomUser' # app3 model name
 
 TEMPLATES = [
     {
@@ -126,3 +130,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' #app3

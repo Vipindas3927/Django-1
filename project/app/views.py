@@ -407,7 +407,7 @@ def testregister(request):
     return render(request, 'testreg.html')
 def treg(request):
     try:
-        tid = request.POST['tname']
+        tid = request.POST['tid']
         tname = request.POST['tname']
         tdes = request.POST['tdes']
         price = request.POST['price']
